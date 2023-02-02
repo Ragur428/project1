@@ -1,0 +1,137 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block header %}
+    <link href="{% static '/' %}assets/css/ewallet.css" rel="stylesheet" type="text/css"/>
+{% endblock %}
+{% block main %}
+
+		<!--end::Container-->
+
+				<!--end::Header-->
+				<!--begin::Toolbar-->
+				<div class="toolbar py-5 py-lg-5" id="kt_toolbar">
+					<!--begin::Container-->
+					<div id="kt_toolbar_container" class="container-xxl d-flex flex-stack flex-wrap">
+						<!--begin::Page title-->
+						<div class="page-title d-flex flex-column me-3">
+							<!--begin::Title-->
+
+								<li class="breadcrumb-item text-gray-500">View of animal Sitings</li>
+								<!--end::Item-->
+							</ul>
+							<!--end::Breadcrumb-->
+						</div>
+						<!--end::Page title-->
+						<!--begin::Actions-->
+
+
+
+					</div>
+					<!--end::Container-->
+				</div>
+				<!--end::Toolbar-->
+				<!--begin::Container-->
+				<div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
+					<!--begin::Post-->
+					<div class="content flex-row-fluid" id="kt_content">
+						<div class="card mb-5 mb-xl-10">
+							<!--begin::Card header-->
+							<div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
+								<!--begin::Card title-->
+								<div class="card-title m-0">
+									<h3 class="fw-bolder m-0">View of animal Sitings</h3>
+								</div>
+								<!--end::Card title-->
+							</div>
+							<!--begin::Card header-->
+
+							 <form id="kt_account_profile_details_form" class="form" action="{% url 'office:siting_list' %}" method="post" enctype="multipart/form-data">
+								{% csrf_token %}
+                                {{ form.as_p }}
+
+
+							<!--begin::Card body-->
+
+							<div class="card-body border-top p-9">
+								<div class="card-footer d-flex justify-content-end py-6 px-9">
+								<button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">New</button>
+							</div>
+								<div class="row mb-6">
+									<!--begin::Label-->
+									<label for="animals" class="col-lg-2 col-form-label  fw-bold fs-6" >Animal</label>
+							        <td><select class="form-select" data-control="select2"
+                                            data-placeholder="Select an option">
+                                    <option></option>
+                                    <option value="Dog">Dog</option>
+                                    <option value="Cat">Cat</option>
+                                    <option value="Bird">Bird</option>
+                                    <option value="Rabbit">Rabbit</option>
+
+                                </select></td>
+
+									<!--end::Label-->
+									<!--begin::Col-->
+
+									<!--end::Col-->
+								</div>
+
+                            <div class="row mb-6">
+									<!--begin::Label-->
+									<label class="col-lg-2 col-form-label  fw-bold fs-6">Breed</label>
+								    <td><select class="form-select" data-control="select2"
+                                            data-placeholder="Select an option">
+                                    <option>Dog</option>
+                                    <option value="Labrador">Labrador</option>
+                                    <option value="German Shepherd">German Shepherd</option>
+                                    <option value="Golden Retriever">Golden Retriever</option>
+                                    <option value="Bulldog">Bulldog</option>
+                                    <option value="Boxer">Boxer</option>
+									<option>Cat</option>
+                                    <option value="Bengal">Bengal</option>
+                                    <option value="Bombay">Bombay</option>
+                                    <option value="Russion">Russion</option>
+                                    <option value="Savannah">Savannah</option>
+                                    <option value="Siameses">Siameses</option>
+									<option>Brid</option>
+                                    <option value="Woodpecker">Woodpecker</option>
+                                    <option value="Pigeon">Pigeon</option>
+                                    <option value="Peacock">Peacock</option>
+                                    <option value="Rooster">Rooster</option>
+                                    <option value="Vulture">Vulture</option>
+									<option>Rabbit</option>
+                                    <option value="Tan">Tan</option>
+                                    <option value="Jersey">Jersey</option>
+                                    <option value="English">English</option>
+                                    <option value="Sable">Sable</option>
+                                    <option value="Silver Fox">Silver Fox</option>
+
+                                </select></td>
+									<!--end::Label-->
+									<!--begin::Col-->
+
+									<!--end::Col-->
+								</div>
+
+								<!--end::Col-->
+
+									<!--end::Col-->
+								</div>
+
+							<!--end::Card body-->
+							<!--begin::Actions-->
+							<div class="card-footer d-flex justify-content-end py-6 px-9">
+								<button type="cancel" class="btn btn-light btn-active-light-primary me-2">Cancel</button>
+								<button type="save" class="btn btn-primary" id="kt_account_profile_details_submit">Save</button>
+							</div>
+							<!--end::Actions-->
+							<!--end::Content-->
+
+
+
+
+{% endblock %}
+
+
+{% block footer %}
+<script src="{% static 'office/assets/js/addlessons.js' %}"></script>
+{% endblock %}
